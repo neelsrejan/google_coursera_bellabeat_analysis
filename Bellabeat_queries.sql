@@ -588,4 +588,6 @@ SELECT 'Average' AS GlobalStatistics,
 			SELECT *
 			FROM bellabeat..minuteMETsNarrow1
 			) AS MinMet
-		) AS Met 
+		) AS Met,
+		(SELECT ROUND(AVG(TotalMinutesAsleep/60), 2)
+		FROM bellabeat..sleepDay) AS Sleep
